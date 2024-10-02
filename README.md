@@ -2,7 +2,7 @@
 
 This is a Video NFT Marketplace Dapp built on Solana blockchain where the fee for watching the video is paid using PYUSD
 
-Hosted app link: [https://video-nft-marketplace-solana.netlify.app/](https://video-nft-marketplace-solana.netlify.app/)
+Hosted app link: [https://solana-video-marketplace.vercel.app/](https://solana-video-marketplace.vercel.app/)
 
 ## Clone and run the app locally
 1. Clone the repository
