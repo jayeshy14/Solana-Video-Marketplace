@@ -7,7 +7,7 @@ Hosted app link: [https://video-nft-marketplace-solana.netlify.app/](https://vid
 ## Clone and run the app locally
 1. Clone the repository
    ```sh
-   git clone https://github.com/Shoydon/video-nft-marketplace-solana
+   git clone https://github.com/jayeshy14/Solana-Video-Marketplace
    ```
 2. Install the required libraries
    ```sh
@@ -20,12 +20,11 @@ Hosted app link: [https://video-nft-marketplace-solana.netlify.app/](https://vid
    `NOTE: Make sure you have a Solana wallet extension(which supports PYUSD) installed and have some test SOL and PYUSD in that wallet`
    * [Phantom Wallet](https://phantom.app/)
    * [Solana Faucet](https://faucet.solana.com/) 
-   * [PYUSD Faucet](https://faucet.paxos.com/)
   
 ## Smart contract writing and deploying process
 * ### Development
   * The smart contract was written in [Rust](https://doc.rust-lang.org/stable/book/) and deployed using [Anchor framework](https://www.anchor-lang.com/) and deployed on the Solana Devnet.
-  * We have made use of the [Phantom Wallet](https://phantom.app/). The SOL devnet test tokens were obtained from [Solana Faucet](https://faucet.solana.com/) and PYUSD test tokens were obtained from [PYUSD Faucet](https://faucet.paxos.com/). 
+  * We have made use of the [Phantom Wallet](https://phantom.app/). The SOL devnet test tokens were obtained from [Solana Faucet](https://faucet.solana.com/).
 * ### Deployment
   *  The smart contract was deployed on the devnet from the cli. The steps to setup the deployment environment are [here](https://www.anchor-lang.com/docs/installation)
     *  Initialize a new project using the command:
@@ -61,19 +60,6 @@ Hosted app link: [https://video-nft-marketplace-solana.netlify.app/](https://vid
         ```
     *  You will get the `PROGRAM ID` after the contract is successfully deployed
     *  Also, copy the `IDL.json` file stored at `./programs/anchor/target/idl/<project_name>.json` and use it in your frontend
-* ### Generating the `STATE KEY`
-  *  Go to [Solana Playground](https://beta.solpg.io/) and create a new `Anchor(Rust)` project.
-  *  Paste this code in the `client.ts` file
-        ```typescript
-        const programID = new web3.PublicKey(PROGRAM_ID_OBTAINED_FROM_PREVIOUS_STEP);
-
-        const [stateAccountPublicKey, _bump] = web3.PublicKey.findProgramAddressSync(
-          [Buffer.from("state")],
-          programID
-        );
-        console.log("state account: ", stateAccountPublicKey.toString());
-        ```
-        You will get the `STATE KEY` as the output
 
 ## Extra Links and information
 * [**Solana programs library**](https://spl.solana.com/): Used for importing in-built functions and token standards
